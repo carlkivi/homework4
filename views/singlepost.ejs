@@ -24,16 +24,36 @@
     <h3 class="likes">
         likes : <%= posts.likes %>
     </h3>
+    <button id="thumbsUp" onclick="handleIncrease()">Like</button>
     <button type="submit" onclick="handleDelete()">Delete</button>
 </div>
 <script>
+    function handleIncrease() {
+
+        console.log("Laiginuppu vajutati!!");
+        let postId = '<%= posts.id %>';
+        let postLikes = '<%= posts.likes %>';
+        console.log("trying to increase likes on post with ID " + postId + " and with the number of likes " + postLikes);
+        const endPoint = '/singlepost/' + postId;
+        fetch(endPoint, {method: 'PUT'})
+            .then(() => {
+                document.getElementById("thumbsUp").disabled = true;
+            });
+        console.log("jõudsime lõppu");
+
+    }
+
+
     function handleDelete() {
+
         let postId = '<%= posts.id %>';
         console.log("trying to delete Post with ID " +postId + " and redirect");
         const endPoint = '/post/' + postId;
         fetch(endPoint, { method: 'DELETE'})
             .then(() => {window.location.replace("/posts")});
+
     }
+
 </script>
 
 <%- include('./partials/footer.ejs') %>
