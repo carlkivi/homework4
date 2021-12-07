@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/views/style.css">
+    <link rel="stylesheet" href="/style.css">
     <title>Single Post</title>
 </head>
 
@@ -22,12 +22,13 @@
         </p>
     </div>
     <h3 class="likes">
-        likes : <%= posts.likes %>
+        likes : <%= posts.likes %>;
     </h3>
     <button id="thumbsUp" onclick="handleIncrease()">Like</button>
     <button type="submit" onclick="handleDelete()">Delete</button>
 </div>
 <script>
+
     function handleIncrease() {
 
         console.log("Laiginuppu vajutati!!");
@@ -39,7 +40,8 @@
             .then(() => {
                 document.getElementById("thumbsUp").disabled = true;
             });
-        console.log("jõudsime lõppu");
+        postLikes+=1;
+        console.log("jõudsime lõppu, uus laikide arv on: " + postLikes);
 
     }
 
