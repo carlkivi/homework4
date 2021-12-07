@@ -11,9 +11,11 @@
 <h1>Posts page</h1>
 <%- include('./partials/navbar.ejs') %>
 
-<div class="posts list">
+<div class="postslist">
     <h2>All posts</h2>
 
+    <div class="content">
+    <main>
     <% if (posts.length > 0) { %>
         <% posts.forEach(post => { %>
 
@@ -21,6 +23,7 @@
                 <h3 class="title">
                     <%= post.title %>
                 </h3>
+                <div><img class="image" src=<%= post.urllink%>></div>
                 <p class="body">
                     <%= post.body %>
                 </p>
@@ -30,6 +33,10 @@
     <% } else { %>
         <p>You did not post anything...</p>
     <% } %>
+        <aside class="left-sidebar"></aside>
+        <aside class="right-sidebar"></aside>
+    </main>
+    </div>
 </div>
 
 <%- include('./partials/footer.ejs') %>

@@ -1,3 +1,56 @@
 h1 {
     color: green;
 }
+body{
+    text-align: center;
+}
+main {
+    background: antiquewhite;
+    flex: 3;
+    order: 2;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.left-sidebar {
+    order: 1;
+    flex: 1;
+}
+.right-sidebar {
+    flex: 1;
+    order: 3;
+}
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.image {
+    width: 600px;
+    margin: 0;
+}
+.singlepost {
+    padding: 10px;
+    margin: 10px 80px;
+    box-shadow: 0 0 5px 5px gainsboro;
+    border-radius: 5px;
+    background-color: white;
+}
+.postslist{
+     margin-bottom: 150px;
+     background-color: antiquewhite;
+ }
+.body{
+    margin-top: 5px;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.create-post{
+    padding: 10px;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 10px;
+    box-shadow: 0 0 5px 5px gainsboro;
+    border-radius: 5px;
+    background: antiquewhite;
+}

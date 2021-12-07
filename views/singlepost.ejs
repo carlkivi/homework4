@@ -16,13 +16,14 @@
     <h2>
         <%= posts.title %>
     </h2>
+    <img class="image" src=<%= posts.urllink %>>
     <div class="content">
         <p>
             <%= posts.body %>
         </p>
     </div>
     <h3 class="likes">
-        likes : <%= posts.likes %>;
+        likes : <%= posts.likes %>
     </h3>
     <button id="thumbsUp" onclick="handleIncrease()">Like</button>
     <button type="submit" onclick="handleDelete()">Delete</button>
