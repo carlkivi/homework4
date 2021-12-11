@@ -32,20 +32,16 @@
 
     function handleIncrease() {
 
-        console.log("Laiginuppu vajutati!!");
-        let postId = '<%= posts.id %>';
-        let postLikes = '<%= posts.likes %>';
+        const postId = '<%= posts.id %>';
+        const postLikes = '<%= posts.likes %>';
         console.log("trying to increase likes on post with ID " + postId + " and with the number of likes " + postLikes);
+
         const endPoint = '/singlepost/' + postId;
         fetch(endPoint, {method: 'PUT'})
             .then(() => {
                 document.getElementById("thumbsUp").disabled = true;
             });
-        postLikes+=1;
-        console.log("jõudsime lõppu, uus laikide arv on: " + postLikes);
-
     }
-
 
     function handleDelete() {
 

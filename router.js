@@ -95,18 +95,17 @@ server.get('/addnewpost', (req, res) => {
 server.put('/singlepost/:id', async (req, res) => {
     try {
         const {id} = req.params;
-        console.log("Hakkame suurendame laike postitusel id-ga " + id)
-        //const post = req.body;
+        const post = req.body;
+
         console.log("update request has arrived");
         const updatepost = await pool.query(
             "UPDATE posts SET likes = likes+1 WHERE id = $1", [id]
         );
-        res.render('singlepost');
+        res.end();
     } catch (err) {
         console.error(err.message);
     }
 });
-
 
 //bad request!
 server.use((req, res) => {
