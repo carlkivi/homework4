@@ -54,3 +54,12 @@ main {
     border-radius: 5px;
     background: antiquewhite;
 }
+.errorPage {
+    padding: 10px;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 10px;
+    box-shadow: 0 0 5px 5px gainsboro;
+    border-radius: 5px;
+    background: antiquewhite;
+}
