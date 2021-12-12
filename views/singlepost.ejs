@@ -34,6 +34,9 @@
 
         const postId = '<%= posts.id %>';
         const postLikes = '<%= posts.likes %>';
+        let newLikes = postLikes;
+        newLikes++;
+        document.getElementsByClassName("likes").item(0).innerHTML = "likes : " + newLikes;
         console.log("trying to increase likes on post with ID " + postId + " and with the number of likes " + postLikes);
 
         const endPoint = '/singlepost/' + postId;
